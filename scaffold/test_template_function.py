@@ -38,7 +38,8 @@ class Test{{ .TestClassName }}(asttest.ASTTest):
             f"The `{self.function_name}` function is missing. Did you change/remove it? Do you have all of the parameters defined?"
         )
 
-        self.validate_type_hints(student_func, type_hints, return_type)
+        self.validate_function_param_type_hints(student_func, type_hints)
+        self.validate_return_type_hint(student_func, return_type)
 
     def test_correct_output(self):
         pass
