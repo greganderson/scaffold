@@ -89,9 +89,7 @@ func buildTemplate(dir string, test_name string) error {
 	var tmpl_path string
 	if Tmpls.FuncTmpl != nil {
 		tmpl_path = fmt.Sprintf("%s/.config/scaffold/test_template_function.py", home)
-		log.Println("Using function template")
 	} else if Tmpls.ClassTmpl != nil {
-		log.Println("Using class template")
 		tmpl_path = fmt.Sprintf("%s/.config/scaffold/test_template_class.py", home)
 	}
 	fobj, err := os.ReadFile(tmpl_path)
