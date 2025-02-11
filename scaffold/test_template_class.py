@@ -37,8 +37,10 @@ class Test{{ .TestClassName }}(asttest.ASTTest):
         
     def test_constructor_definition(self):
         target_method = "__init__"
+        required_params: list = [str, list[str], int]
+
         self.assertTrue(target_method in self.methods, f"The {target_method} method is missing.")
-        self.validate_method_param_type_hints(self.methods[target_method], [str, list[str], int])
+        self.validate_method_param_type_hints(self.methods[target_method], required_params)
         
     def test_instance_variables(self):
         required_instance_variables: list[str] = []
